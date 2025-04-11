@@ -18,10 +18,11 @@
     z-index: 999;
     transition: clip-path 0.3s ease, transform 0.3s ease; /* Smooth transition */
     transform-origin: center center; /* Ensures scaling happens from the center */
-    cursor: pointer; /* Indicate it's interactive (though hover won't work) */
+    cursor: pointer; /* Indicate it's interactive */
+    outline: none; /* Remove default focus outline for cleaner look */
   }
 
-  .heart-photo:active {
+  .heart-photo:focus {
     clip-path: none !important; /* Remove heart shape */
     transform: translate(-50%, 0) scale(1.1) !important; /* Scale up */
   }
@@ -48,12 +49,10 @@
       width: 50vw; /* Make it wider on mobile */
       height: 50vw;
       max-width: 150px; /* Adjust max width for mobile */
-      max-height: 150px;
+      max-height: 150px; /* Adjust max height for mobile */
     }
   }
 </style>
-
-
 
 <body class="bg-light" style="background-color: #ffe6f0 !important;">
   <div class="container py-5 text-center">
