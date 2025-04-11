@@ -11,37 +11,31 @@
 <style>
   .heart-photo {
     position: absolute;
+    top: 5vh; /* Slight margin from top */
     left: 50%;
     transform: translateX(-50%);
+    width: 25vw;  /* Relative to viewport width */
+    height: 25vw; /* Keeps the aspect ratio */
+    max-width: 120px; /* Maximum size */
+    max-height: 120px; /* Maximum size */
     object-fit: cover;
     clip-path: path("M60 110s-60-36-60-72C0 18 27 0 60 30C93 0 120 18 120 38c0 36-60 72-60 72z");
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    transition: clip-path 0.3s ease, transform 0.3s ease; /* Smooth transition */
-    transform-origin: center center; /* Ensures scaling happens from the center */
   }
 
-  .heart-photo:hover {
-    clip-path: none; /* Removes the heart shape */
-    transform: translate(-50%, 0) scale(1.1); /* Scales from the center */
-  }
-
-  /* Default styles for larger screens */
-  @media (min-width: 401px) {
+  @media (max-width: 400px) {
     .heart-photo {
-      top: 8vh;
-      width: 25vw;
-      height: 25vw;
-      max-width: 120px;
-      max-height: 120px;
-    }
-
-    .yes-page .heart-photo {
-      top: 10vh;
+      width: 30vw; /* Adjusts for small phones */
+      height: 30vw;
+      max-width: 70px;
+      max-height: 70px;
+      top: 5vh;
     }
   }
-
 </style>
+
+
 
 <body class="bg-light" style="background-color: #ffe6f0 !important;">
   <div class="container py-5 text-center">
