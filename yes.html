@@ -8,95 +8,50 @@
 </head>
 
 <style>
+  .heart-photo {
+    position: absolute;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    object-fit: cover;
+    clip-path: path("M60 110s-60-36-60-72C0 18 27 0 60 30C93 0 120 18 120 38c0 36-60 72-60 72z");
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: clip-path 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transform-origin: center center; /* Ensures scaling happens from the center */
+    cursor: pointer; /* Indicate it's interactive (though hover won't work) */
+  }
 
-  .heart-photo {
+  .heart-photo:active {
+    clip-path: none !important; /* Remove heart shape */
+    transform: translate(-50%, 0) scale(1.1) !important; /* Scale up */
+  }
 
-    position: absolute;
+  /* Default styles for larger screens */
+  @media (min-width: 401px) {
+    .heart-photo {
+      top: 8vh;
+      width: 25vw;
+      height: 25vw;
+      max-width: 120px;
+      max-height: 120px;
+    }
 
-    left: 50%; /* Center horizontally */
+    .yes-page .heart-photo {
+      top: 10vh;
+    }
+  }
 
-    transform: translateX(-50%);
-
-    object-fit: cover;
-
-    clip-path: path("M60 110s-60-36-60-72C0 18 27 0 60 30C93 0 120 18 120 38c0 36-60 72-60 72z");
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-    z-index: 999;
-
-    transition: clip-path 0.3s ease, transform 0.3s ease; /* Smooth transition */
-
-    transform-origin: center center; /* Ensures scaling happens from the center */
-
-    cursor: pointer; /* Indicate it's interactive (though hover won't work) */
-
-  }
-
-
-
-  .heart-photo:active {
-
-    clip-path: none !important; /* Remove heart shape */
-
-    transform: translate(-50%, 0) scale(1.1) !important; /* Scale up */
-
-  }
-
-
-
-  /* Default styles for larger screens */
-
-  @media (min-width: 401px) {
-
-    .heart-photo {
-
-      top: 8vh;
-
-      width: 25vw;
-
-      height: 25vw;
-
-      max-width: 120px;
-
-      max-height: 120px;
-
-    }
-
-
-
-    .yes-page .heart-photo {
-
-      top: 10vh;
-
-    }
-
-  }
-
-
-
-  /* Mobile-specific styles (optional - adjust as needed) */
-
-  @media (max-width: 400px) {
-
-    .heart-photo {
-
-      top: 9vh; /* Adjust top position for smaller screens */
-
-      width: 50vw; /* Make it wider on mobile */
-
-      height: 50vw;
-
-      max-width: 150px; /* Adjust max width for mobile */
-
-      max-height: 150px;
-
-    }
-
-  }
-
+  /* Mobile-specific styles (optional - adjust as needed) */
+  @media (max-width: 400px) {
+    .heart-photo {
+      top: 15vh; /* Adjust top position for smaller screens */
+      width: 50vw; /* Make it wider on mobile */
+      height: 50vw;
+      max-width: 150px; /* Adjust max width for mobile */
+      max-height: 150px;
+    }
+  }
 </style>
-
 
 
 <body class="bg-light" style="background-color: #ffe6f0 !important;">
