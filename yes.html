@@ -10,7 +10,7 @@
 <style>
   .heart-photo {
     position: absolute;
-    left: 50%; /* Center horizontally */
+    left: 50%;
     transform: translateX(-50%);
     object-fit: cover;
     clip-path: path("M60 110s-60-36-60-72C0 18 27 0 60 30C93 0 120 18 120 38c0 36-60 72-60 72z");
@@ -18,12 +18,11 @@
     z-index: 999;
     transition: clip-path 0.3s ease, transform 0.3s ease; /* Smooth transition */
     transform-origin: center center; /* Ensures scaling happens from the center */
-    cursor: pointer; /* Indicate it's interactive (though hover won't work) */
   }
 
-  .heart-photo:active {
-    clip-path: none !important; /* Remove heart shape */
-    transform: translate(-50%, 0) scale(1.1) !important; /* Scale up */
+  .heart-photo:hover {
+    clip-path: none; /* Removes the heart shape */
+    transform: translate(-50%, 0) scale(1.1); /* Scales from the center */
   }
 
   /* Default styles for larger screens */
@@ -41,18 +40,22 @@
     }
   }
 
-  /* Mobile-specific styles (optional - adjust as needed) */
+  /* Styles specifically for phone screens */
   @media (max-width: 400px) {
     .heart-photo {
-      top: 15vh; /* Adjust top position for smaller screens */
-      width: 50vw; /* Make it wider on mobile */
+      /* Adjust top positioning - let's try a different unit */
+      top: 9vh; /* Slightly lower than before */
+      width: 50vw;
       height: 50vw;
-      max-width: 150px; /* Adjust max width for mobile */
-      max-height: 150px;
+      max-width: 150px; /* Slightly larger max width for phones */
+      max-height: 150px; /* Slightly larger max height for phones */
+    }
+
+    .yes-page .heart-photo {
+      top: 10vh; /* Adjust top for yes page on phones */
     }
   }
 </style>
-
 <body class="bg-light" style="background-color: #ffe6f0 !important;">
   <div class="container py-5 text-center">
 <img src="kandd.jpg" alt="Cute us 💖" class="heart-photo">
