@@ -25,34 +25,34 @@
     transform: translate(-50%, 0) scale(1.1); /* Scales from the center */
   }
 
-  /* Default styles for larger screens (if not already defined) */
+  /* Default styles for larger screens */
   @media (min-width: 401px) {
     .heart-photo {
-      top: 8vh; /* Adjusted spacing for larger screens */
-      width: 25vw; /* Relative to viewport width */
-      height: 25vw; /* Keeps the aspect ratio */
-      max-width: 120px; /* Maximum size */
-      max-height: 120px; /* Maximum size */
+      top: 8vh;
+      width: 25vw;
+      height: 25vw;
+      max-width: 120px;
+      max-height: 120px;
     }
 
     .yes-page .heart-photo {
-      top: 10vh; /* More spacing to avoid overlap on larger screens */
+      top: 10vh;
     }
   }
 
   /* Styles specifically for phone screens */
   @media (max-width: 400px) {
     .heart-photo {
-      /* Adjust top positioning based on viewport height, ensuring it's lower */
-      top: 15vh; /* Increased top spacing for phones */
-      width: 40vw; /* Adjust width for smaller screens */
-      height: 40vw; /* Maintain aspect ratio */
-      max-width: 90px; /* Adjust maximum size for phones */
-      max-height: 90px; /* Adjust maximum size for phones */
+      /* Adjust top positioning - let's try a different unit */
+      top: 12vh; /* Slightly lower than before */
+      width: 40vw;
+      height: 40vw;
+      max-width: 100px; /* Slightly larger max width for phones */
+      max-height: 100px; /* Slightly larger max height for phones */
     }
 
     .yes-page .heart-photo {
-      top: 18vh; /* Adjust top spacing for yes page on phones */
+      top: 15vh; /* Adjust top for yes page on phones */
     }
   }
 </style>
